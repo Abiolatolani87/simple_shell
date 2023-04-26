@@ -6,7 +6,7 @@
  * Return: zero is returned if sucess, or other number
  * if its declared in the arguments
  */
-int builtin_exit(data_of_program *data)
+int builtin_exit(data_of_program *data);
 {
 	int s;
 
@@ -31,7 +31,7 @@ int builtin_exit(data_of_program *data)
  * Return: zero is returned if sucess, or other number
  * if its declared in the arguments
  */
-int cd_builtin(data_of_program *data)
+int cd_builtin(data_of_program *data);
 {
 	char *dir_home = env_get_key("HOME", data), *dir_old = NULL;
 	char old_dir[128] = {0};
@@ -71,7 +71,7 @@ int cd_builtin(data_of_program *data)
  * Return: zero is returned if sucess, or other number
  * if its declared in the arguments
  */
-int set_work_directory(data_of_program *data, char *new_dir)
+int set_work_directory(data_of_program *data, char *new_dir);
 {
 	char old_dir[128] = {0};
 	int err_code = 0;
@@ -98,7 +98,7 @@ int set_work_directory(data_of_program *data, char *new_dir)
  * Return: zero is returned if sucess, or other number
  * if its declared in the arguments
  */
-int help_builtin(data_of_program *data)
+int help_builtin(data_of_program *data);
 {
 	int s, length = 0;
 	char *messages[6] = {NULL};
@@ -144,7 +144,7 @@ int help_builtin(data_of_program *data)
  * Return: zero is returned if sucess, or other number
  * if its declared in the arguments
  */
-int builtin_alias(data_of_program *data)
+int builtin_alias(data_of_program *data);
 {
 	int s = 0;
 

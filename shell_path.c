@@ -34,8 +34,8 @@ int find_progpath(data_of_program *data)
 	}
 	for (s = 0; directories[s]; s++)
 	{/* appends the function_name to path */
-		directories[s] = str_concat(directoriess[s], data->tokens[0]);
-		ret_code = check_file(directories[i]);
+		directories[s] = str_concat(directories[s], data->tokens[0]);
+		ret_code = check_file(directories[s]);
 		if (ret_code == 0 || ret_code == 126)
 		{/* the file was found, is not a directory and has executable*/
 			errno = 0;

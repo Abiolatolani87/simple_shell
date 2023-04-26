@@ -6,7 +6,7 @@
  * Return: Returns the return of the function executed if there is a match,
  * otherwise returns -1
  */
-int list_builtins(data_of_program *data)
+int list_builtins(data_of_program *data);
 {
 	int iterator;
 	builtins options[] = {

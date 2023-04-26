@@ -77,7 +77,7 @@ int Getline_array(data_of_program *data);
 /*======== Buffer_size.c ========*/
 
 /* expand the buffer size  variables */
-void expand_Buffsize(data_of_program *data)
+void Expand_buffsize(data_of_program *data);
 
 /* expand aliases of the data */
 void expand_alias(data_of_program *data);

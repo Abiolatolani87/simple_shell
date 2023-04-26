@@ -7,7 +7,7 @@
  * Return: returns zero if sucess, or other number
  * if its declared in the arguments
  */
-int env_builtin(data_of_program *data)
+int env_builtin(data_of_program *data);
 {
 	int s;
 	char cpyname[50] = {'\0'};
@@ -56,7 +56,7 @@ int env_builtin(data_of_program *data)
  * Return:returns zero if sucess, or other number
  * if its declared in the arguments
  */
-int builtin_set_env(data_of_program *data)
+int builtin_set_env(data_of_program *data);
 {
 	/* validate args */
 	if (data->tokens[1] == NULL || data->tokens[2] == NULL)
@@ -78,7 +78,7 @@ int builtin_set_env(data_of_program *data)
  * @data: struct for the program's data'
  * Return: ..
  */
-int builtin_unset_env(data_of_program *data)
+int builtin_unset_env(data_of_program *data);
 {
 	/* validate args */
 	if (data->tokens[1] == NULL)

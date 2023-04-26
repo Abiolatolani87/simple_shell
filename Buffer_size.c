@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * expand_Buffsize - expand the buffer size variables
- * @data: a pointer to a structure of the program's data
+ *Expand_buffsize:  expand the buffer size variables
+ *@*data: a pointer to a structure of the program's data
  *
  * Return: nothing is returned, but sets errno.
  */
-void expand_Buffsize(data_of_program *data)
+void expand_Buffsize(data_of_program *data);
 {
 	int s, r;
 	char line[BUFFER_SIZE] = {0}, expan[BUFFER_SIZE] = {'\0'}, *temp;
@@ -24,7 +24,7 @@ void expand_Buffsize(data_of_program *data)
 			buffer_add(line, expan);
 			buffer_add(line, data->input_line + s + 2);
 		}
-		else if (line[s] == '$' && line[s + 1] == '' || line[s + 1] == '$')
+		else if (line[s] == '$' && line[s + 1] == ' ' || line[s + 1] == '$')
 		{
 			line[s] = '\0';
 			long_to_string(getpid(), expan, 10);
@@ -56,7 +56,7 @@ void expand_Buffsize(data_of_program *data)
  *
  * Return: nothing is returned, but sets errno.
  */
-void expand_alias(data_of_program *data)
+void expand_alias(data_of_program *data);
 {
 	int s, r was_expanded = 0;
 	char line[BUFFER_SIZE] = {0}, expan[BUFFER_SIZE] = {'\0'}, *temp;
@@ -98,7 +98,7 @@ void expand_alias(data_of_program *data)
  * @str_to_add: string to be copied in the buffer
  * Return: nothing is returned, but sets errno.
  */
-int buffer_add(char *buffer, char *str_to_add)
+int buffer_add(char *buffer, char *str_to_add);
 {
 	int len, s;
 

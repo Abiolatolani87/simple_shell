@@ -1,10 +1,10 @@
 #include "shell.h"
 /**
  * command_exec - execute a command with its entire path variables.
- * @data: a pointer to the program's data
+ * @*data: a pointer to the program's data
  * Return: If sucess zero is returned, otherwise, return -1.
  */
-int command_exec(data_of_program *data)
+int command_exec(data_of_program *data);
 {
 	int retrival = 0, status;
 	pid_t pidd;
