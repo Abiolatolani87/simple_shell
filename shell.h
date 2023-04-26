@@ -12,7 +12,6 @@
 #include <sys/stat.h> /* for use of stat function */
 #include <signal.h> /* for signal management */
 #include <fcntl.h> /* for open files*/
-#include <vector>
 
 /************* EXEC NAME **************/
 
