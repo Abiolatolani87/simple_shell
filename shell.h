@@ -30,6 +30,7 @@
  * @env: copy of the environ
  * @alias_list: array of pointers with aliases.
  */
+
 typedef struct info
 {
 	char *program_name;
@@ -47,6 +48,7 @@ typedef struct info
  * @builtin: the name of the builtin
  * @function: the associated function to be called for each builtin
  */
+
 typedef struct builtins
 {
 	char *builtin;
@@ -77,7 +79,11 @@ int Getline_array(data_of_program *data);
 /*======== Buffer_size.c ========*/
 
 /* expand the buffer size  variables */
+<<<<<<< HEAD
 void Expand_buffsize(data_of_program *data);
+=======
+void expand_Buffsize(data_of_program *data);
+>>>>>>> 5b2e2a42bda66ecc96e2a4bc8b9ab6e0291162be
 
 /* expand aliases of the data */
 void expand_alias(data_of_program *data);
@@ -86,7 +92,7 @@ void expand_alias(data_of_program *data);
 int buffer_add(char *buffer, char *str_to_add);
 
 
-/*======== str_tok.c ========*/
+/*======== delim_strtok.c ========*/
 
 /* Separate the string in tokens using a designed delimiter */
 void tokenize(data_of_program *data);
@@ -101,7 +107,7 @@ char *_strtok(char *line, char *delim);
 int command_exec(data_of_program *data);
 
 
-/*======== builtins_list.c ========*/
+/*======== list_builtins.c ========*/
 
 /* It execute the programme that matches the builtin */
 
@@ -120,7 +126,7 @@ char **tokenize_path(data_of_program *data);
 /************** HELPERS FOR MEMORY MANAGEMENT **************/
 
 
-/*======== helpers_free.c ========*/
+/*======== free_array.c ========*/
 
 /* Frees the memory for directories */
 void free_array_f_pointers(char **directories);
@@ -135,7 +141,7 @@ void free_all_data(data_of_program *data);
 /************** BUILTINS **************/
 
 
-/*======== builtins_exit.c========*/
+/*======== builtin_exit.c========*/
 
 /*It closes and exit the shell */
 int builtin_exit(data_of_program *data);
@@ -186,7 +192,7 @@ void print_environ(data_of_program *data);
 /************** HELPERS FOR PRINTING **************/
 
 
-/*======== helpers_print.c ========*/
+/*======== str_duplicate.c ========*/
 
 /* Prints a string in the standar output */
 int _print(char *string);
@@ -201,7 +207,7 @@ int _print_error(int errorcode, data_of_program *data);
 /************** HELPERS FOR STRINGS MANAGEMENT **************/
 
 
-/*======== helpers_string.c ========*/
+/*======== str_length.c ========*/
 
 /* Counts the number of characters of a string */
 int str_length(char *string);
@@ -219,7 +225,7 @@ char *str_concat(char *string1, char *string2);
 void str_reverse(char *string);
 
 
-/*======== helpers_numbers.c ========*/
+/*======== str_convert.c ========*/
 
 /* Cast from int to string */
 void long_to_string(long number, char *string, int base);
