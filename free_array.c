@@ -9,7 +9,7 @@
 void free_recurrent_data(data_of_program *data)
 {
 	if (data->tokens)
-		free_array_of_pointers(data->tokens);
+		free_array_f_pointers(data->tokens);
 	if (data->input_line)
 		free(data->input_line);
 	if (data->command_name)
@@ -34,8 +34,8 @@ void free_all_data(data_of_program *data)
 			perror(data->program_name);
 	}
 	free_recurrent_data(data);
-	free_array_of_pointers(data->env);
-	free_array_of_pointers(data->alias_list);
+	free_array_f_pointers(data->env);
+	free_array_f_pointers(data->alias_list);
 }
 
 /**
@@ -45,7 +45,7 @@ void free_all_data(data_of_program *data)
  * Return: Nothing
  */
 
-void free_array_of_pointers(char **array)
+void free_array_f_pointers(char **array)
 {
 	int r;
 
