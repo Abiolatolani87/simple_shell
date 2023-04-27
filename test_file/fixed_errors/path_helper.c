@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * _getpath - This functions finds and return the PATH variable
- * for the global environment vector.
+ * _getpath - This functions finds and return the PATH
+ * variable for the global environment vector
  *
  * Return: PATH, if found, or NULL
  */
@@ -32,15 +32,15 @@ char *_getpath(void)
 
 
 /**
- * search_path - searches for PATH directory containing command.
- *
- * @p: first operand.
- * @cmd: second operand.
+ * sreach_path - searches for PATH dir
+ * containing command
+ * @p: first operand
+ * @cmd: second operand
  *
  * Return: unsigned int character count
  */
 
-char *search_path(char **p, char *cmd)
+char *sreach_path(char **p, char *cmd)
 {
 	int i = 0;
 
@@ -62,10 +62,9 @@ char *search_path(char **p, char *cmd)
 
 
 /**
- * append_path - concatenates a path token with a cmd token.
- *
- * @path: path string to append to.
- * @cmd: command string to append.
+ * append_path - concatenates a path token with a cmd token
+ * @path: path string to append to
+ * @cmd: command string to append
  *
  * Return: buffer to appended path
  */

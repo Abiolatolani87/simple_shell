@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * main - Entry point.
- *
- * @argc: Number of command line arguments.
- * @argv: Argument vector.
- * @envp: environment variable.
+ * main - Entry point to the shell program
+ * @argc: Number of command line arguments
+ * @argv: Argument vector
+ * @envp: environment variable
  *
  * Return: Always 0
+ *
  */
 
 int main(int argc, char *argv[], char *envp[])
@@ -40,7 +40,7 @@ int main(int argc, char *argv[], char *envp[])
 			continue;
 		path = _getpath();
 		paths = tokenize(path);
-		pathcmd = search_path(paths, cmd[0]);
+		pathcmd = sreach_path(paths, cmd[0]);
 		if (pathcmd == NULL)
 			perror(argv[0]);
 		else
@@ -54,11 +54,11 @@ int main(int argc, char *argv[], char *envp[])
 
 
 /**
- * prompt_printer - prints the prompt if the shell is in interactive mode.
+ * prompt_printer - This program prints the prompt if the
+ * shell is in interactive mode
  *
  * Return: void
  */
-
 void prompt_printer(void)
 {
 	if ((isatty(STDIN_FILENO) == 1) && (isatty(STDOUT_FILENO) == 1))
@@ -68,13 +68,11 @@ void prompt_printer(void)
 }
 
 /**
- * handle_sig - Allows ctrl + C to be printed by the shell.
- *
- * @n: signum.
- *
+ * handle_sig - Allows ctrl+C to be printed by the shell
+ * @n: signum
+ * 
  * Return: void
  */
-
 void handle_sig(int n __attribute__((unused)))
 {
 	write(STDERR_FILENO, "\n", 1);
@@ -84,14 +82,12 @@ void handle_sig(int n __attribute__((unused)))
 
 /**
  * cmd_type - Checks the command whether its a built-in or executable
- * with a pathname.
- *
- * @cmd: array of pointers to command line arguments.
- * @b: lineptr returned by getline function.
+ * with a pathname
+ * @cmd: array of pointers to command line arguments
+ * @b: lineptr returned by getline function
  *
  * Return: 1 if the command is executed, 0 otherwise
  */
-
 int cmd_type(char **cmd, char *b)
 {
 	if (is_builtin(cmd, b))

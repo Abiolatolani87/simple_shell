@@ -1,11 +1,10 @@
 #include "shell.h"
-
 /**
- * exec_cmd - executes a single command by the user and waits for
- * the child process to update its status.
- *
- * @c: command.
- * @cmd: vector array of pointers to commands.
+ * exec_cmd - This program creates a new child process,
+ * executes a command, and waits for the child process
+ * to update its status
+ * @c: command
+ * @cmd: vector array of pointers to commands
  *
  * Return: void
  */
@@ -34,11 +33,10 @@ void exec_cmd(char *c, char **cmd)
 }
 
 /**
- * tokenize - splits a string into an array of tokens.
+ * tokenize - splits a string into an array of tokens
+ * @str: string to be tokenized and packaged
  *
- * @str: string to be tokenized and packaged.
- *
- * Return: vector array of string tokens.
+ * Return: vector array of string tokens
  */
 
 char **tokenize(char *str)
@@ -84,13 +82,12 @@ char **tokenize(char *str)
 }
 
 /**
- * free_cmds - This program frees the cmd array.
- *
- * @m: pointer to an array of command line arguments.
+ * free_cmds - This program frees the cmd array
+ * @m: pointer to an array of command line
+ * arguments
  *
  * Return: void
  */
-
 void free_cmds(char **m)
 {
 	int index = 0;

@@ -25,7 +25,7 @@ char *_getpath(void);
 char **tokenize(char *str);
 void exec_cmd(char *c, char **cmd);
 char *append_path(char *path, char *cmd);
-char *search_path(char **p, char *cmd);
+char *sreach_path(char **p, char *cmd);
 
 /*built-ins*/
 void env_builtin(void);
@@ -49,7 +49,6 @@ extern char **environ;
  *
  * Description: builtin commands
  */
-
 struct builtins
 {
 	char *env;
@@ -65,7 +64,6 @@ struct builtins
  *
  * Description: Used in error handling
  */
-
 struct info
 {
 	int final_exit;
@@ -78,14 +76,13 @@ struct info
  * @interactive: First member
  *
  * Description: used to handle
- *
+ * 
  * boolean switches
  */
-
 struct flags
 {
 	bool interactive;
 } flags;
 
 
-#endif /* __SHELL_H__ */
+#endif /* __SHELL_H__ 
