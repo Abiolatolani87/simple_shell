@@ -22,7 +22,7 @@
 /**
  * struct info- struct for the program's data
  * @program_name: the name of the executable
- * @input_line: pointer to the input read for _getline
+ * @input_line: pointer to the input read for Getline_array
  * @command_name: pointer to the first command typed by the user
  * @exec_counter: number of excecuted comands
  * @file_descriptor: file descriptor to the input of commands
@@ -61,8 +61,8 @@ typedef struct builtins
 
 /*========  shell.c  ========*/
 
-/* Inicialize the struct with the info of the program */
-void inicialize_data(data_of_program *data, int arc, char *argv[], char **env);
+/* Initialize the struct with the info of the program */
+void inicialize_data(data_of_program *data, int argc, char *argv[], char **env);
 
 /* Makes the infinite loop that shows the prompt*/
 void sisifo(char *prompt, data_of_program *data);
@@ -76,14 +76,14 @@ void handle_ctrl_c(int opr UNUSED);
 /* Read a single line of the standard input*/
 int Getline_array(data_of_program *data);
 
+/* check each line if logical operation exist*/
+int check_logic_ops(char *array_commd[], int s, char array_opr[])
+
+
 /*======== Buffer_size.c ========*/
 
 /* expand the buffer size  variables */
-<<<<<<< HEAD
-void Expand_buffsize(data_of_program *data);
-=======
-void expand_Buffsize(data_of_program *data);
->>>>>>> 5b2e2a42bda66ecc96e2a4bc8b9ab6e0291162be
+void expand_buffsize(data_of_program *data);
 
 /* expand aliases of the data */
 void expand_alias(data_of_program *data);
@@ -147,13 +147,13 @@ void free_all_data(data_of_program *data);
 int builtin_exit(data_of_program *data);
 
 /*it  Changes  the current directory */
-int builtin_cd(data_of_program *data);
+int cd_builtin(data_of_program *data);
 
 /*it sets the work directory */
 int set_work_directory(data_of_program *data, char *new_dir);
 
 /* It displays the help information */
-int builtin_help(data_of_program *data);
+int help_builtin(data_of_program *data);
 
 /*It sets, unsets and shows alias */
 int builtin_alias(data_of_program *data);
@@ -162,12 +162,12 @@ int builtin_alias(data_of_program *data);
 /*======== env_builtins.c ========*/
 
 /*It shows the environment where the shell runs */
-int builtin_env(data_of_program *data);
+int env_builtin(data_of_program *data);
 
-/* create or override a variable of environment */
+/*it creates or overrides a variable of environment */
 int builtin_set_env(data_of_program *data);
 
-/* delete a variable of environment */
+/*it  deletes a variable of environment */
 int builtin_unset_env(data_of_program *data);
 
 

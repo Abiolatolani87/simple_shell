@@ -6,7 +6,7 @@
  *
  * Return: nothing is returned, but sets errno.
  */
-void expand_Buffsize(data_of_program *data);
+void expand_buffsize(data_of_program *data);
 {
 	int s, r;
 	char line[BUFFER_SIZE] = {0}, expan[BUFFER_SIZE] = {'\0'}, *temp;
